@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "User" ADD COLUMN     "skills" TEXT[],
+ALTER COLUMN "role" DROP NOT NULL,
+ALTER COLUMN "role" SET DEFAULT 'USER';
