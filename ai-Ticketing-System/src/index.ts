@@ -1,12 +1,12 @@
 import express from 'express';
 import cors from 'cors';
-import { PrismaClient } from '../generated/prisma'
-import {serve} from "inngest/express"
-import {inngest} from "./inngest/client"
-import { onUserSignup } from "./inngest/function/on-signup"
-import { onTicketCreate } from "./inngest/function/on-ticket-create"
-import userRoutes from './routes/user'
-import ticketRoutes from './routes/tickets'
+import { PrismaClient } from '../generated/prisma/index.js';
+import { serve } from "inngest/express"
+import { inngest } from "./inngest/client.js"
+import { onUserSignup } from "./inngest/function/on-signup.js"
+import { onTicketCreate } from "./inngest/function/on-ticket-create.js"
+import userRoutes from './routes/user.js'
+import ticketRoutes from './routes/tickets.js'
 import dotenv from "dotenv"
 
 dotenv.config();
@@ -26,9 +26,11 @@ app.use("/api/ingest",
 )
 
 export const prisma = new PrismaClient()
+
 prisma.$connect().then(()=>{
     console.log("connected to database");
     app.listen(3000,()=>{`server running on post 3000`})
-}).catch((err)=>{
+}).catch((err: any)=>{
+
     console.log(err);
 })

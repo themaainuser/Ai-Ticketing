@@ -1,7 +1,7 @@
-import { inngest } from "../client";
-import { prisma } from "../../index";
+import { inngest } from "../client.js";
+import { prisma } from "../../index.js";
 import { NonRetriableError } from "inngest";
-import { sendMail } from "../../utils/mailer";
+import { sendMail } from "../../utils/mailer.js";
 
 export const onUserSignup = inngest.createFunction(
   { id: "On-User-Signup", retries:3 },

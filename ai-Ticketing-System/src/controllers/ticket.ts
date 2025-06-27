@@ -1,6 +1,6 @@
-import { inngest } from "../inngest/client";
-import { Ticket, User } from "../../generated/prisma";
-import { prisma } from "../index";
+import { inngest } from "../inngest/client.js";
+import { Ticket, User } from "../../generated/prisma/index.js";
+import { prisma } from "../index.js";
 
 
 export const createTicket = async ( req: any, res: any ) =>{

@@ -1,8 +1,8 @@
-import { inngest } from "../client";
-import { prisma } from "../../index";
+import { inngest } from "../client.js";
+import { prisma } from "../../index.js";
 import { NonRetriableError } from "inngest";
-import { sendMail } from "../../utils/mailer";
-import analyzeAgent from "../../utils/agent";
+import { sendMail } from "../../utils/mailer.js";
+import analyzeAgent from "../../utils/agent.js";
 
 
 export const onTicketCreate = inngest.createFunction(   

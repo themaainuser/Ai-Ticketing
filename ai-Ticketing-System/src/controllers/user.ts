@@ -1,8 +1,8 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { User } from "../../generated/prisma";
-import { inngest } from "../inngest/client";
-import { prisma } from "../index";
+import { User } from "../../generated/prisma/index.js";
+import { inngest } from "../inngest/client.js";
+import { prisma } from "../index.js";
 
 export const signup = async (req: any, res: any) =>{
     const {email, password, skills = []} = req.body;
